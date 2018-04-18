@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="css的学习的困难点(日后补充)开始学习前端三大基础的css了，css和js的学习方式完全不同，css有自己的特点。先了解一下css为什么难学。  CSS属性不正交  ##css的文档流 ###文档流(normal flow)网页中的流就是对文档的读取和输出的顺序。其遵循从左到右，从上到下的读取，输出和显示顺序。简单点说，内联元素依次从左到右水平排列，块级元素从上倒下竖直排列。由此可以总结一个常用">
+<meta name="description" content="css的学习的困难点(日后补充)开始学习前端三大基础的css了，css和js的学习方式完全不同，css有自己的特点。先了解一下css为什么难学。  CSS属性不正交  css的文档流文档流(normal flow)网页中的流就是对文档的读取和输出的顺序。其遵循从左到右，从上到下的读取，输出和显示顺序。简单点说，内联元素依次从左到右水平排列，块级元素从上倒下竖直排列。由此可以总结一个常用的结论: 块">
 <meta name="keywords" content="-css">
 <meta property="og:type" content="article">
 <meta property="og:title" content="css_布局和定位">
 <meta property="og:url" content="http://yoursite.com/2018/04/15/css-布局和定位/index.html">
 <meta property="og:site_name" content="后端转前端">
-<meta property="og:description" content="css的学习的困难点(日后补充)开始学习前端三大基础的css了，css和js的学习方式完全不同，css有自己的特点。先了解一下css为什么难学。  CSS属性不正交  ##css的文档流 ###文档流(normal flow)网页中的流就是对文档的读取和输出的顺序。其遵循从左到右，从上到下的读取，输出和显示顺序。简单点说，内联元素依次从左到右水平排列，块级元素从上倒下竖直排列。由此可以总结一个常用">
+<meta property="og:description" content="css的学习的困难点(日后补充)开始学习前端三大基础的css了，css和js的学习方式完全不同，css有自己的特点。先了解一下css为什么难学。  CSS属性不正交  css的文档流文档流(normal flow)网页中的流就是对文档的读取和输出的顺序。其遵循从左到右，从上到下的读取，输出和显示顺序。简单点说，内联元素依次从左到右水平排列，块级元素从上倒下竖直排列。由此可以总结一个常用的结论: 块">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-04-15T16:14:41.000Z">
+<meta property="og:updated_time" content="2018-04-16T12:10:43.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="css_布局和定位">
-<meta name="twitter:description" content="css的学习的困难点(日后补充)开始学习前端三大基础的css了，css和js的学习方式完全不同，css有自己的特点。先了解一下css为什么难学。  CSS属性不正交  ##css的文档流 ###文档流(normal flow)网页中的流就是对文档的读取和输出的顺序。其遵循从左到右，从上到下的读取，输出和显示顺序。简单点说，内联元素依次从左到右水平排列，块级元素从上倒下竖直排列。由此可以总结一个常用">
+<meta name="twitter:description" content="css的学习的困难点(日后补充)开始学习前端三大基础的css了，css和js的学习方式完全不同，css有自己的特点。先了解一下css为什么难学。  CSS属性不正交  css的文档流文档流(normal flow)网页中的流就是对文档的读取和输出的顺序。其遵循从左到右，从上到下的读取，输出和显示顺序。简单点说，内联元素依次从左到右水平排列，块级元素从上倒下竖直排列。由此可以总结一个常用的结论: 块">
 
 
 
@@ -304,9 +304,8 @@
 <ul>
 <li>CSS属性不正交</li>
 </ul>
-<p>##css的文档流</p>
-<p>###文档流(normal flow)<br>网页中的流就是对文档的读取和输出的顺序。其遵循从左到右，从上到下的读取，输出和显示顺序。<br>简单点说，内联元素依次从左到右水平排列，块级元素从上倒下竖直排列。<br>由此可以总结一个常用的结论: <strong>块级元素的高度取决于内部文档流元素高度的总和。</strong></p>
-<p>###脱离文档流<br>脱离文档流的元素的位置就不再受文档流的影响了。<br>脱离文档流的元素的位置由脱离文档流的方式决定。<br>常用的有<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">position: fixed //元素的位置相对于屏幕确定的</span><br><span class="line"></span><br><span class="line">position: absolute //元素的位置相对于最近的position: relative元素确定的</span><br><span class="line"></span><br><span class="line">position: float //待总结</span><br></pre></td></tr></table></figure></p>
+<h2 id="css的文档流"><a href="#css的文档流" class="headerlink" title="css的文档流"></a>css的文档流</h2><h3 id="文档流-normal-flow"><a href="#文档流-normal-flow" class="headerlink" title="文档流(normal flow)"></a>文档流(normal flow)</h3><p>网页中的流就是对文档的读取和输出的顺序。其遵循从左到右，从上到下的读取，输出和显示顺序。<br>简单点说，内联元素依次从左到右水平排列，块级元素从上倒下竖直排列。<br>由此可以总结一个常用的结论: <strong>块级元素的高度取决于内部文档流元素高度的总和。</strong></p>
+<h3 id="脱离文档流"><a href="#脱离文档流" class="headerlink" title="脱离文档流"></a>脱离文档流</h3><p>脱离文档流的元素的位置就不再受文档流的影响了。<br>脱离文档流的元素的位置由脱离文档流的方式决定。<br>常用的有<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">position: fixed //元素的位置相对于屏幕确定的</span><br><span class="line"></span><br><span class="line">position: absolute //元素的位置相对于最近的position: relative元素确定的</span><br><span class="line"></span><br><span class="line">position: float //待总结</span><br></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -346,6 +345,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/04/19/css-布局小技巧/" rel="prev" title="css_布局小技巧">
+                css_布局小技巧 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -422,7 +425,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">10</span>
+                  <span class="site-state-item-count">11</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -468,7 +471,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#css的学习的困难点-日后补充"><span class="nav-number">1.</span> <span class="nav-text">css的学习的困难点(日后补充)</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#css的学习的困难点-日后补充"><span class="nav-number">1.</span> <span class="nav-text">css的学习的困难点(日后补充)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#css的文档流"><span class="nav-number">2.</span> <span class="nav-text">css的文档流</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#文档流-normal-flow"><span class="nav-number">2.1.</span> <span class="nav-text">文档流(normal flow)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#脱离文档流"><span class="nav-number">2.2.</span> <span class="nav-text">脱离文档流</span></a></li></ol></li></ol></div>
             
 
           </div>
