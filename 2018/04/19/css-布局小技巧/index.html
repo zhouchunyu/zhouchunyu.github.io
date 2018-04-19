@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="后端转前端">
 <meta property="og:description" content="左右布局假设你想要一个左右布局，css有多种方式可以实习 使用背景梯度如果只使用单个元素，那么可以使用背景梯度，使两种背景色在元素中各占一半。123456789.container &amp;#123;  background: linear-gradient(    to right,     #ff9e2c 0%,     #ff9e2c 50%,     #b6701e 50%,     #b670">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-04-19T00:27:09.000Z">
+<meta property="og:updated_time" content="2018-04-19T12:48:52.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="css_布局小技巧">
 <meta name="twitter:description" content="左右布局假设你想要一个左右布局，css有多种方式可以实习 使用背景梯度如果只使用单个元素，那么可以使用背景梯度，使两种背景色在元素中各占一半。123456789.container &amp;#123;  background: linear-gradient(    to right,     #ff9e2c 0%,     #ff9e2c 50%,     #b6701e 50%,     #b670">
@@ -326,6 +326,19 @@
     right: 0px;
     width: 50%;
     ">right</div><br></div>
+
+<h3 id="使用float"><a href="#使用float" class="headerlink" title="使用float"></a>使用float</h3><p>使用绝对定位需要指定父元素的高度，很容易引起bug。在子元素上增加float可以实现左右分布，注意在父元素上加入clearfix，不然会有bug。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">.left-half &#123;</span><br><span class="line">  background-color: #ff9e2c;</span><br><span class="line">  float: left;</span><br><span class="line">  width: 50%;</span><br><span class="line">&#125;</span><br><span class="line">.right-half &#123;</span><br><span class="line">  background-color: #b6701e;</span><br><span class="line">  float: left;</span><br><span class="line">  width: 50%;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<div class="container clearfix"><br>  <div class="left-half" style="
+    background-color: #ff9e2c;
+    float: left;
+    width: 50%;
+  ">left</div><div class="right-half" style="
+    background-color: #b6701e;
+    float: left;
+    width: 50%;
+    ">right</div><br></div>
+
+
       
     </div>
     
@@ -486,7 +499,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#左右布局"><span class="nav-number">1.</span> <span class="nav-text">左右布局</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#使用背景梯度"><span class="nav-number">1.1.</span> <span class="nav-text">使用背景梯度</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用绝对定位"><span class="nav-number">2.</span> <span class="nav-text">使用绝对定位</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#左右布局"><span class="nav-number">1.</span> <span class="nav-text">左右布局</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#使用背景梯度"><span class="nav-number">1.1.</span> <span class="nav-text">使用背景梯度</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用绝对定位"><span class="nav-number">2.</span> <span class="nav-text">使用绝对定位</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用float"><span class="nav-number">3.</span> <span class="nav-text">使用float</span></a></li></ol></div>
             
 
           </div>

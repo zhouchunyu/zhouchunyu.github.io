@@ -326,6 +326,19 @@
     right: 0px;
     width: 50%;
     ">right</div><br></div>
+
+<h3 id="使用float"><a href="#使用float" class="headerlink" title="使用float"></a>使用float</h3><p>使用绝对定位需要指定父元素的高度，很容易引起bug。在子元素上增加float可以实现左右分布，注意在父元素上加入clearfix，不然会有bug。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">.left-half &#123;</span><br><span class="line">  background-color: #ff9e2c;</span><br><span class="line">  float: left;</span><br><span class="line">  width: 50%;</span><br><span class="line">&#125;</span><br><span class="line">.right-half &#123;</span><br><span class="line">  background-color: #b6701e;</span><br><span class="line">  float: left;</span><br><span class="line">  width: 50%;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<div class="container clearfix"><br>  <div class="left-half" style="
+    background-color: #ff9e2c;
+    float: left;
+    width: 50%;
+  ">left</div><div class="right-half" style="
+    background-color: #b6701e;
+    float: left;
+    width: 50%;
+    ">right</div><br></div>
+
+
           
         
       
