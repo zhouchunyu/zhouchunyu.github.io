@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="后端转前端">
 <meta property="og:description" content="左右布局假设你想要一个左右布局，css有多种方式可以实习 使用背景梯度如果只使用单个元素，那么可以使用背景梯度，使两种背景色在元素中各占一半。123456789.container &amp;#123;  background: linear-gradient(    to right,     #ff9e2c 0%,     #ff9e2c 50%,     #b6701e 50%,     #b670">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-04-19T00:19:21.000Z">
+<meta property="og:updated_time" content="2018-04-19T00:24:50.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="css_布局小技巧">
 <meta name="twitter:description" content="左右布局假设你想要一个左右布局，css有多种方式可以实习 使用背景梯度如果只使用单个元素，那么可以使用背景梯度，使两种背景色在元素中各占一半。123456789.container &amp;#123;  background: linear-gradient(    to right,     #ff9e2c 0%,     #ff9e2c 50%,     #b6701e 50%,     #b670">
@@ -312,14 +312,15 @@
 
 <h3 id="使用绝对定位"><a href="#使用绝对定位" class="headerlink" title="使用绝对定位"></a>使用绝对定位</h3><p>如果想使内容也分布在左右两边，一个直接的想法是让两个子元素相对父元素使用百分比绝对定位。这样每个子元素可以有自己的内容。<br>这种方法的缺点是父元素需要一个指定的高度，而指定高度对内容变化是不友好的。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">.container &#123;</span><br><span class="line">  display: table;</span><br><span class="line">  width: 100%;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.left-half &#123;</span><br><span class="line">  background-color: #ff9e2c;</span><br><span class="line">  position: absolute;</span><br><span class="line">  left: 0px;</span><br><span class="line">  width: 50%;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.right-half &#123;</span><br><span class="line">  background-color: #b6701e;</span><br><span class="line">  position: absolute;</span><br><span class="line">  right: 0px;</span><br><span class="line">  width: 50%;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <div class="container" style="
+  position: relative;
   display: table;
   width: 100%;
-  "><br>  <div class="left-half" style="
+  "><div class="left-half" style="
     background-color: #ff9e2c;
     position: absolute;
     left: 0px;
     width: 50%;
-    "><br>  </div><br>  <div class="right-half" style="
+    "></div><div class="right-half" style="
     background-color: #b6701e;
     position: absolute;
     right: 0px;
