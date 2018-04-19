@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="后端转前端">
 <meta property="og:description" content="左右布局假设你想要一个左右布局，css有多种方式可以实习 使用背景梯度如果只使用单个元素，那么可以使用背景梯度，使两种背景色在元素中各占一半。123456789.container &amp;#123;  background: linear-gradient(    to right,     #ff9e2c 0%,     #ff9e2c 50%,     #b6701e 50%,     #b670">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-04-19T14:35:25.000Z">
+<meta property="og:updated_time" content="2018-04-19T14:55:47.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="css_布局小技巧">
 <meta name="twitter:description" content="左右布局假设你想要一个左右布局，css有多种方式可以实习 使用背景梯度如果只使用单个元素，那么可以使用背景梯度，使两种背景色在元素中各占一半。123456789.container &amp;#123;  background: linear-gradient(    to right,     #ff9e2c 0%,     #ff9e2c 50%,     #b6701e 50%,     #b670">
@@ -338,7 +338,7 @@
     width: 50%;
     ">right</div><br></div>
 
-<h3 id="使用inline-block属性"><a href="#使用inline-block属性" class="headerlink" title="使用inline-block属性"></a>使用inline-block属性</h3><p>对于内联元素可以使用inline-block来实现左右布局(块级元素使用float，亲)。inline-block简单来说就是将对象呈现为inline对象，但是对象的内容作为block对象呈现。之后的内联对象会被排列在同一行内。比如我们可以给一个link（a元素）inline-block属性值，使其既具有block的宽度高度特性又具有inline的同行特性。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">div &#123;</span><br><span class="line">  display: inline-block;</span><br><span class="line">  vertical-align: top;</span><br><span class="line">  width: 50%;</span><br><span class="line">  padding: 1rem;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.left-half &#123;</span><br><span class="line">  background: #ff9e2c;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.right-half &#123;</span><br><span class="line">  background: #b6701e;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="使用inline-block属性"><a href="#使用inline-block属性" class="headerlink" title="使用inline-block属性"></a>使用inline-block属性</h3><p>对于内联元素可以使用inline-block来实现左右布局(块级元素使用float，亲)。inline-block简单来说就是将对象呈现为inline对象，但是对象的内容作为block对象呈现。之后的内联对象会被排列在同一行内。比如我们可以给一个link（a元素）inline-block属性值，使其既具有block的宽度高度特性又具有inline的同行特性。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">div &#123;</span><br><span class="line">  display: inline-block;</span><br><span class="line">  vertical-align: top;</span><br><span class="line">  width: 50%;</span><br><span class="line">  padding: 1rem;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.left-half &#123;</span><br><span class="line">  background-color: #ff9e2c;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.right-half &#123;</span><br><span class="line">  background-color: #b6701e;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p><span class="left-half" style="display: inline-block; width: 50%; backgroud: #FF9327">left</span><span class="right-half" style="display: inline-block; width: 50%; backgroud: #AD651D">right</span></p>
 <h3 id="左中右布局"><a href="#左中右布局" class="headerlink" title="左中右布局"></a>左中右布局</h3><p>类似的可以使用float和inline-block，宽度设置为33.3%即可<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">.left &#123;</span><br><span class="line">  display: inline-block;</span><br><span class="line">  background-color: #ff9e2c;</span><br><span class="line">  width: 33.3%;</span><br><span class="line">&#125;</span><br><span class="line">.center &#123;</span><br><span class="line">  display: inline-block;</span><br><span class="line">  background-color: #006CB2;</span><br><span class="line">  width: 33.3%;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.right &#123;</span><br><span class="line">  display: inline-block;</span><br><span class="line">  background-color: #b6701e;</span><br><span class="line">  width: 33.3%;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <div class="container"><br>  <div class="left" style="
@@ -356,24 +356,27 @@
   ">right</div><br></div>
 
 <h3 id="水平居中"><a href="#水平居中" class="headerlink" title="水平居中"></a>水平居中</h3><p>块级元素左右两边的margin设置为auto, 并给定一个固定宽度。内联元素的在父元素上设置text-align: center</p>
-<div class="align-center" style="margin: auto 0px; background: black; width: 233px">块级div元素</div><br><div class="container" style="text-align: center"><span class="align-center" style="background: black">内联span元素</span></div>
+<div class="align-center" style="margin: 0px auto; background: black; width: 233px">块级div元素</div><br><div class="container" style="text-align: cent er"><span class="align-center" style="background: black">内联span元素</span></div>
 
-<h3 id="垂直居中"><a href="#垂直居中" class="headerlink" title="垂直居中"></a>垂直居中</h3><p>对于单个元素，只需要设定上下margin相等即可垂直居中。<br>对于一行元素，css的vertical-align属性可以控制该行元素在竖直方向上如何对齐。垂直居中，只需要设定<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">.container&#123;</span><br><span class="line">  vertical-align: middle</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<div class="container" style="vertical-align: middle"><br>  <div class="left" style="
+<h3 id="垂直居中"><a href="#垂直居中" class="headerlink" title="垂直居中"></a>垂直居中</h3><p>对于单个元素，只需要设定上下margin相等即可垂直居中。<br>对于一行元素，css的vertical-align属性可以控制该行元素在竖直方向上如何对齐。垂直居中，只需要设定<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">.element&#123;</span><br><span class="line">  vertical-align: middle</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<div class="container"><br>  <div class="left" style="
   height: 50px;
   display: inline-block;
   background-color: #ff9e2c;
   width: 33.3%;
+  vertical-align: middle
   ">left</div><div class="center" style="
   height: 100px;
   display: inline-block;
   background-color: #006CB2;
   width: 33.3%;
+  vertical-align: middle
   ">center</div><div class="right" style="
   height: 150px;
   display: inline-block;
   background-color: #b6701e;
   width: 33.3%;
+  vertical-align: middle
   ">right</div><br></div>
 
 
