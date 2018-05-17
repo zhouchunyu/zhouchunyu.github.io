@@ -93,7 +93,7 @@
 <meta property="og:image" content="http://static.zybuluo.com/zcy4coding/4lfqbkgogzxstos9ltipzidl/image.png">
 <meta property="og:image" content="http://static.zybuluo.com/zcy4coding/kayfg05ua3n2lw24j7jx9aly/image.png">
 <meta property="og:image" content="http://static.zybuluo.com/zcy4coding/gfb4urw600s3w1a6k1uuxc4a/image.png">
-<meta property="og:updated_time" content="2018-05-17T05:33:16.000Z">
+<meta property="og:updated_time" content="2018-05-17T05:36:38.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ActiveStorage详细介绍">
 <meta name="twitter:description" content="用rails新特性解决它们适合的问题rails 5给我们提供了不少非常实用的新特性，使用它们替代旧方案，可以提高开发时抽象的层次，不必再考虑已经封装好的逻辑，将精力集中在和业务相关的代码开发上，减少bug，并降低维护的难度。ActiveStorage就是这样的rails 5新特新。 ActiveStorageActiveStorage是rails框架内云端图片的上传方案。有直传和后端上传两种方式，">
@@ -339,7 +339,7 @@
 <p>当点创建资源的时候可以看到，应用先去请求后端允许创建资源(1)，紧接着将图片上传到云端(2, 3)，最后将云端资源信息返回给服务器(4)<br><em>1，2，3，4对应下图中的四个请求</em></p>
 <p>上传云端:<br><img src="http://static.zybuluo.com/zcy4coding/4lfqbkgogzxstos9ltipzidl/image.png" alt="image.png-84.1kB"><br>云端返回信息传递给rails:<br><img src="http://static.zybuluo.com/zcy4coding/kayfg05ua3n2lw24j7jx9aly/image.png" alt="image.png-53.2kB"><br>rails利用返回的信息创建相应的dattachment 和 blob:<br><img src="http://static.zybuluo.com/zcy4coding/gfb4urw600s3w1a6k1uuxc4a/image.png" alt="image.png-70.7kB"></p>
 <h2 id="ActiveStorage配置"><a href="#ActiveStorage配置" class="headerlink" title="ActiveStorage配置"></a>ActiveStorage配置</h2><p>配置ActiveStorage支持的云端服务非常简单，只需要提供身份认证信息就可以了。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># amazon:</span><br><span class="line">#   service: S3</span><br><span class="line">#   access_key_id: &lt;%%= Rails.application.credentials.dig(:aws, :access_key_id) %&gt;</span><br><span class="line">#   secret_access_key: &lt;%%= Rails.application.credentials.dig(:aws, :secret_access_key) %&gt;</span><br><span class="line">#   region: us-east-1</span><br><span class="line">#   bucket: your_own_bucket</span><br></pre></td></tr></table></figure></p>
-<p>同时在相应的开发环境配置文件文件中开启对应的服务就行，比如我想在development.rb中启用amazon服务，只需哟啊<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># development.rb</span><br><span class="line">config.active_storage.service = :development</span><br></pre></td></tr></table></figure></p>
+<p>同时在相应的开发环境配置文件文件中开启对应的服务就行，比如我想在development.rb中启用amazon服务，只需指定它就可以了<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># development.rb</span><br><span class="line">config.active_storage.service = :amazon</span><br></pre></td></tr></table></figure></p>
 
       
     </div>
