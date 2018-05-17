@@ -229,6 +229,148 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/17/ActiveStorage详细介绍/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="zcy4coding">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="后端学前端">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/05/17/ActiveStorage详细介绍/" itemprop="url">ActiveStorage详细介绍</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-05-17T13:32:34+08:00">
+                2018-05-17
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="用rails新特性解决它们适合的问题"><a href="#用rails新特性解决它们适合的问题" class="headerlink" title="用rails新特性解决它们适合的问题"></a>用rails新特性解决它们适合的问题</h2><p>rails 5给我们提供了不少非常实用的新特性，使用它们替代旧方案，可以提高开发时抽象的层次，不必再考虑已经封装好的逻辑，将精力集中在和业务相关的代码开发上，减少bug，并降低维护的难度。<br><strong>ActiveStorage就是这样的rails 5新特新。</strong></p>
+<h2 id="ActiveStorage"><a href="#ActiveStorage" class="headerlink" title="ActiveStorage"></a>ActiveStorage</h2><p>ActiveStorage是rails框架内云端图片的上传方案。有直传和后端上传两种方式，并且支持不同大小的图片预览。使用起来非常简单。</p>
+<h2 id="后端上传"><a href="#后端上传" class="headerlink" title="后端上传"></a>后端上传</h2><p>以创建带图片的消息为例:</p>
+<ol>
+<li>创建一个消息模型, rails g scffold message title:string content:text</li>
+<li>rake active_storage:install 并执行 rake db:migrate 这一步会创建两张表 <em>active_storage_attachments</em> 和 <em>active_storage_blobs</em><br>active_storage_attachments 会将附件多态关联到其他记录上, 同时会关联 blob(blob并不存储实际的文件，而是存储文件的属性信息)</li>
+<li><p>在模型上添加关联 has_many_attached :images</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">class Message &lt; ApplicationRecord</span><br><span class="line">  has_many_attached :images</span><br><span class="line">end</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>在form中使用辅助方法<br>slim 版本</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">= form_with model: message do |form|</span><br><span class="line">  = form.text_field :title, placeholder: &quot;Title&quot;</span><br><span class="line">  = form.text_area :content</span><br><span class="line">  = form.file_field :images</span><br><span class="line">  = form.submit</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>在controller中将上传的文件绑定到user的images</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">@message.images.attach params[:images]</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>大功告成了 文件可以通过active storage上传了<br><img src="http://static.zybuluo.com/zcy4coding/n3ow1yp1puqm3h90xncojan5/image.png" alt="image.png-42.8kB"><br>文件上传成功<br><img src="http://static.zybuluo.com/zcy4coding/or8mzhysyizc4udy29tsfjiw/image.png" alt="image.png-37.8kB"><br>可以看到后台把每个文件上传到了到了云端，并且创建了一个attachment和一个blob<br><img src="http://static.zybuluo.com/zcy4coding/l0cotp4sbw3v02vee846ecbh/image.png" alt="image.png-97.3kB"></p>
+<h2 id="直接上传云端"><a href="#直接上传云端" class="headerlink" title="直接上传云端"></a>直接上传云端</h2><p>如果想要使用直传方案，只需要引入activestorage.js 并在视图端开启直传就可以了<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">//= require activestorage</span><br><span class="line">#新建端rails项目会在全局默认引入</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">form.file_field :images, direct_upload: true</span><br></pre></td></tr></table></figure>
+<p>当点创建资源的时候可以看到，应用先去请求后端允许创建资源(1)，紧接着将图片上传到云端(2, 3)，最后将云端资源信息返回给服务器(4)<br><em>1，2，3，4对应下图中的四个请求</em></p>
+<p>上传云端:<br><img src="http://static.zybuluo.com/zcy4coding/4lfqbkgogzxstos9ltipzidl/image.png" alt="image.png-84.1kB"><br>云端返回信息传递给rails:<br><img src="http://static.zybuluo.com/zcy4coding/kayfg05ua3n2lw24j7jx9aly/image.png" alt="image.png-53.2kB"><br>rails利用返回的信息创建相应的dattachment 和 blob:<br><img src="http://static.zybuluo.com/zcy4coding/gfb4urw600s3w1a6k1uuxc4a/image.png" alt="image.png-70.7kB"></p>
+<h2 id="ActiveStorage配置"><a href="#ActiveStorage配置" class="headerlink" title="ActiveStorage配置"></a>ActiveStorage配置</h2><p>配置ActiveStorage支持的云端服务非常简单，只需要提供身份认证信息就可以了。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># amazon:</span><br><span class="line">#   service: S3</span><br><span class="line">#   access_key_id: &lt;%%= Rails.application.credentials.dig(:aws, :access_key_id) %&gt;</span><br><span class="line">#   secret_access_key: &lt;%%= Rails.application.credentials.dig(:aws, :secret_access_key) %&gt;</span><br><span class="line">#   region: us-east-1</span><br><span class="line">#   bucket: your_own_bucket</span><br></pre></td></tr></table></figure></p>
+<p>同时在相应的开发环境配置文件文件中开启对应的服务就行，比如我想在development.rb中启用amazon服务，只需哟啊<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># development.rb</span><br><span class="line">config.active_storage.service = :development</span><br></pre></td></tr></table></figure></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/25/rails-system-test/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1496,131 +1638,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/31/linux-commands-简介/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="zcy4coding">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="后端学前端">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/03/31/linux-commands-简介/" itemprop="url">linux_commands_简介</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-03-31T20:42:03+08:00">
-                2018-03-31
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h3 id="吼吼吼用markdown来写第一篇博客"><a href="#吼吼吼用markdown来写第一篇博客" class="headerlink" title="吼吼吼用markdown来写第一篇博客"></a>吼吼吼用markdown来写第一篇博客</h3><p>linux命令的缩写是去掉元音字母取前几个字母</p>
-<p>ls 命令是list的缩写 表示显示当前文件夹下的文件</p>
-<p>cat 是concatenate(有拼接的含义)的缩写 是文件输出命令<br>cat 可以输出单个文件 cat file<br>cat 可以从键盘输入创建一个文件 cat &gt; file<br>cat 可以拼接文件  cat file1 file2 &gt; file3</p>
-<p>mv 是move的缩写<br>mv 经常用来备份文件或者目录。<br>命令参数：<br>-b ：若需覆盖文件，则覆盖前先行备份。<br>-f ：force 强制的意思，如果目标文件已经存在，不会询问而直接覆盖；<br>-i ：若目标文件 (destination) 已经存在时，就会询问是否覆盖！<br>-u ：若目标文件已经存在，且 source 比较新，才会更新(update)</p>
-<p>touch<br>可以更新文件的修改时间，文件不存在则创建一个新文件</p>
-<p>网站 <a href="https://explainshell.com/" target="_blank" rel="noopener">https://explainshell.com/</a><br>可以详细的解释命令的含义和参数</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1671,7 +1688,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">12</span>
+                  <span class="site-state-item-count">13</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
