@@ -312,7 +312,7 @@
 <li><p>在form中使用辅助方法<br>slim 版本</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">= form_with model: message do |form|</span><br><span class="line">  = form.text_field :title, placeholder: &quot;Title&quot;</span><br><span class="line">  = form.text_area :content</span><br><span class="line">  = form.file_field :images</span><br><span class="line">  = form.submit</span><br></pre></td></tr></table></figure>
 </li>
-<li><p>在controller中将上传的文件绑定到user的images</p>
+<li><p>在controller中将上传的图片绑定到message中</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">@message.images.attach params[:images]</span><br></pre></td></tr></table></figure>
 </li>
 </ol>
