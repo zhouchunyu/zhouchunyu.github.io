@@ -79,13 +79,13 @@
 
 
 
-<meta name="description" content="用rails新特性解决它们适合的问题rails 5给我们提供了不少非常实用的新特性，使用它们替代旧方案，可以提高开发时抽象的层次，不必再考虑已经封装好的逻辑，将精力集中在和业务相关的代码开发上，减少bug，并降低维护的难度。ActiveStorage就是这样的rails 5新特新。 ActiveStorageActiveStorage是rails框架内云端图片的上传方案。有直传和后端上传两种方式，">
+<meta name="description" content="用rails新特性解决它们适合的问题rails 5给我们提供了不少非常实用的新特性，使用它们替代旧方案，可以提高开发时抽象的层次，不必再考虑已经封装好的逻辑，将精力集中在和业务相关的代码开发上，减少bug，并降低维护的难度。ActiveStorage就是这样的rails 5新特新之一。 ActiveStorageActiveStorage是rails框架内云端图片的上传方案。有直传和后端上传两种方">
 <meta name="keywords" content="rails">
 <meta property="og:type" content="article">
 <meta property="og:title" content="ActiveStorage详细介绍">
 <meta property="og:url" content="http://yoursite.com/2018/05/17/ActiveStorage详细介绍/index.html">
 <meta property="og:site_name" content="后端学前端">
-<meta property="og:description" content="用rails新特性解决它们适合的问题rails 5给我们提供了不少非常实用的新特性，使用它们替代旧方案，可以提高开发时抽象的层次，不必再考虑已经封装好的逻辑，将精力集中在和业务相关的代码开发上，减少bug，并降低维护的难度。ActiveStorage就是这样的rails 5新特新。 ActiveStorageActiveStorage是rails框架内云端图片的上传方案。有直传和后端上传两种方式，">
+<meta property="og:description" content="用rails新特性解决它们适合的问题rails 5给我们提供了不少非常实用的新特性，使用它们替代旧方案，可以提高开发时抽象的层次，不必再考虑已经封装好的逻辑，将精力集中在和业务相关的代码开发上，减少bug，并降低维护的难度。ActiveStorage就是这样的rails 5新特新之一。 ActiveStorageActiveStorage是rails框架内云端图片的上传方案。有直传和后端上传两种方">
 <meta property="og:locale" content="default">
 <meta property="og:image" content="http://static.zybuluo.com/zcy4coding/n3ow1yp1puqm3h90xncojan5/image.png">
 <meta property="og:image" content="http://static.zybuluo.com/zcy4coding/or8mzhysyizc4udy29tsfjiw/image.png">
@@ -93,10 +93,10 @@
 <meta property="og:image" content="http://static.zybuluo.com/zcy4coding/4lfqbkgogzxstos9ltipzidl/image.png">
 <meta property="og:image" content="http://static.zybuluo.com/zcy4coding/kayfg05ua3n2lw24j7jx9aly/image.png">
 <meta property="og:image" content="http://static.zybuluo.com/zcy4coding/gfb4urw600s3w1a6k1uuxc4a/image.png">
-<meta property="og:updated_time" content="2018-05-17T05:36:38.000Z">
+<meta property="og:updated_time" content="2018-05-17T05:39:32.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ActiveStorage详细介绍">
-<meta name="twitter:description" content="用rails新特性解决它们适合的问题rails 5给我们提供了不少非常实用的新特性，使用它们替代旧方案，可以提高开发时抽象的层次，不必再考虑已经封装好的逻辑，将精力集中在和业务相关的代码开发上，减少bug，并降低维护的难度。ActiveStorage就是这样的rails 5新特新。 ActiveStorageActiveStorage是rails框架内云端图片的上传方案。有直传和后端上传两种方式，">
+<meta name="twitter:description" content="用rails新特性解决它们适合的问题rails 5给我们提供了不少非常实用的新特性，使用它们替代旧方案，可以提高开发时抽象的层次，不必再考虑已经封装好的逻辑，将精力集中在和业务相关的代码开发上，减少bug，并降低维护的难度。ActiveStorage就是这样的rails 5新特新之一。 ActiveStorageActiveStorage是rails框架内云端图片的上传方案。有直传和后端上传两种方">
 <meta name="twitter:image" content="http://static.zybuluo.com/zcy4coding/n3ow1yp1puqm3h90xncojan5/image.png">
 
 
@@ -317,7 +317,7 @@
       
 
       
-        <h2 id="用rails新特性解决它们适合的问题"><a href="#用rails新特性解决它们适合的问题" class="headerlink" title="用rails新特性解决它们适合的问题"></a>用rails新特性解决它们适合的问题</h2><p>rails 5给我们提供了不少非常实用的新特性，使用它们替代旧方案，可以提高开发时抽象的层次，不必再考虑已经封装好的逻辑，将精力集中在和业务相关的代码开发上，减少bug，并降低维护的难度。<br><strong>ActiveStorage就是这样的rails 5新特新。</strong></p>
+        <h2 id="用rails新特性解决它们适合的问题"><a href="#用rails新特性解决它们适合的问题" class="headerlink" title="用rails新特性解决它们适合的问题"></a>用rails新特性解决它们适合的问题</h2><p>rails 5给我们提供了不少非常实用的新特性，使用它们替代旧方案，可以提高开发时抽象的层次，不必再考虑已经封装好的逻辑，将精力集中在和业务相关的代码开发上，减少bug，并降低维护的难度。<br><strong>ActiveStorage就是这样的rails 5新特新之一。</strong></p>
 <h2 id="ActiveStorage"><a href="#ActiveStorage" class="headerlink" title="ActiveStorage"></a>ActiveStorage</h2><p>ActiveStorage是rails框架内云端图片的上传方案。有直传和后端上传两种方式，并且支持不同大小的图片预览。使用起来非常简单。</p>
 <h2 id="后端上传"><a href="#后端上传" class="headerlink" title="后端上传"></a>后端上传</h2><p>以创建带图片的消息为例:</p>
 <ol>
