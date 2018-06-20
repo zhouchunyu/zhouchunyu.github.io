@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="js," />
+  <meta name="keywords" content="Hexo, NexT" />
 
 
 
@@ -79,18 +79,17 @@
 
 
 
-<meta name="description" content="任意类型转字符串 直接用String()构造函数 12345String(1)String(true)String(null)String(undefined)String(&amp;#123;&amp;#125;) // &amp;quot;[object Object]&amp;quot;  x.toString 12345(1).toStringtrue.toString()null.toString() //erroru">
-<meta name="keywords" content="js">
+<meta name="description" content="js的原型和原型链学习过ruby，一开始看到原型链的时候想着，哎，这不是ruby的对象模型么。后来发现，虽然功能是类似的，但js和ruby在细节上差别还是很大的。js里的构造函数在创建对象的时候会将对象的proto属性指向原型对象当在对象上访问某个方法时也会沿着proto对象访问一般最后一个有意义的原型对象是Object.prototypeObject.prototype.proto就是null了">
 <meta property="og:type" content="article">
-<meta property="og:title" content="js里的数据类型转换">
-<meta property="og:url" content="http://yoursite.com/2018/06/20/js里的数据类型转换/index.html">
+<meta property="og:title" content="js的原型和原型链">
+<meta property="og:url" content="http://yoursite.com/2018/06/20/js的原型和原型链/index.html">
 <meta property="og:site_name" content="后端学前端">
-<meta property="og:description" content="任意类型转字符串 直接用String()构造函数 12345String(1)String(true)String(null)String(undefined)String(&amp;#123;&amp;#125;) // &amp;quot;[object Object]&amp;quot;  x.toString 12345(1).toStringtrue.toString()null.toString() //erroru">
+<meta property="og:description" content="js的原型和原型链学习过ruby，一开始看到原型链的时候想着，哎，这不是ruby的对象模型么。后来发现，虽然功能是类似的，但js和ruby在细节上差别还是很大的。js里的构造函数在创建对象的时候会将对象的proto属性指向原型对象当在对象上访问某个方法时也会沿着proto对象访问一般最后一个有意义的原型对象是Object.prototypeObject.prototype.proto就是null了">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-06-20T09:17:33.000Z">
+<meta property="og:updated_time" content="2018-06-20T10:15:05.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="js里的数据类型转换">
-<meta name="twitter:description" content="任意类型转字符串 直接用String()构造函数 12345String(1)String(true)String(null)String(undefined)String(&amp;#123;&amp;#125;) // &amp;quot;[object Object]&amp;quot;  x.toString 12345(1).toStringtrue.toString()null.toString() //erroru">
+<meta name="twitter:title" content="js的原型和原型链">
+<meta name="twitter:description" content="js的原型和原型链学习过ruby，一开始看到原型链的时候想着，哎，这不是ruby的对象模型么。后来发现，虽然功能是类似的，但js和ruby在细节上差别还是很大的。js里的构造函数在创建对象的时候会将对象的proto属性指向原型对象当在对象上访问某个方法时也会沿着proto对象访问一般最后一个有意义的原型对象是Object.prototypeObject.prototype.proto就是null了">
 
 
 
@@ -120,13 +119,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/06/20/js里的数据类型转换/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/06/20/js的原型和原型链/"/>
 
 
 
 
 
-  <title>js里的数据类型转换 | 后端学前端</title>
+  <title>js的原型和原型链 | 后端学前端</title>
   
 
 
@@ -233,7 +232,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/20/js里的数据类型转换/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/20/js的原型和原型链/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="zcy4coding">
@@ -250,7 +249,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">js里的数据类型转换</h1>
+          <h1 class="post-title" itemprop="name headline">js的原型和原型链</h1>
         
 
         <div class="post-meta">
@@ -262,7 +261,7 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-06-20T15:38:42+08:00">
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-06-20T17:39:08+08:00">
                 2018-06-20
               </time>
             
@@ -281,8 +280,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/06/20/js里的数据类型转换/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count gitment-comments-count" data-xid="/2018/06/20/js里的数据类型转换/" itemprop="commentsCount"></span>
+                <a href="/2018/06/20/js的原型和原型链/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count gitment-comments-count" data-xid="/2018/06/20/js的原型和原型链/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -310,21 +309,10 @@
       
 
       
-        <h3 id="任意类型转字符串"><a href="#任意类型转字符串" class="headerlink" title="任意类型转字符串"></a>任意类型转字符串</h3><ol>
-<li><p>直接用String()构造函数</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">String(1)</span><br><span class="line">String(true)</span><br><span class="line">String(null)</span><br><span class="line">String(undefined)</span><br><span class="line">String(&#123;&#125;) // &quot;[object Object]&quot;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>x.toString</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">(1).toString</span><br><span class="line">true.toString()</span><br><span class="line">null.toString() //error</span><br><span class="line">undefined.toString() //error</span><br><span class="line">(&#123;&#125;).toString() //&quot;[object Object]&quot;</span><br></pre></td></tr></table></figure>
-</li>
-<li><ul>
-<li>‘’， 加一个空字符串<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">1 + &apos;&apos;</span><br><span class="line">true + &apos;&apos;</span><br><span class="line">null + &apos;&apos;</span><br><span class="line">undefined + &apos;&apos;</span><br><span class="line">o + &apos;&apos; //&quot;[object Object]&quot;</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-</li>
-</ol>
-<h3 id="任意类型转数字"><a href="#任意类型转数字" class="headerlink" title="任意类型转数字"></a>任意类型转数字</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Number(x)</span><br><span class="line">parseInt(x, 10) //MDN</span><br><span class="line">parseFloat(x) //MDN</span><br><span class="line">x - 0</span><br><span class="line">+x //</span><br></pre></td></tr></table></figure>
-<h3 id="任意类型转布尔"><a href="#任意类型转布尔" class="headerlink" title="任意类型转布尔"></a>任意类型转布尔</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Boolean(x)</span><br><span class="line">!!x //取反两次就可以啦，吼吼吼</span><br></pre></td></tr></table></figure>
+        <h3 id="js的原型和原型链"><a href="#js的原型和原型链" class="headerlink" title="js的原型和原型链"></a>js的原型和原型链</h3><p>学习过ruby，一开始看到原型链的时候想着，哎，这不是ruby的对象模型么。后来发现，虽然功能是类似的，但js和ruby在细节上差别还是很大的。<br>js里的构造函数在创建对象的时候会将对象的<strong>proto</strong>属性指向原型对象<br>当在对象上访问某个方法时也会沿着<strong>proto</strong>对象访问<br>一般最后一个有意义的原型对象是Object.prototype<br>Object.prototype.<strong>proto</strong>就是null了</p>
+<p>可以看出，原型对象里的方法和属性是所有new Constructor出来的对象共有的<br>原型链的顶端是Object.prototype, 其中有 toString 和 valueOf。因此所有对象都可以使用这两个方法</p>
+<h3 id="对js原型链的一些看法，"><a href="#对js原型链的一些看法，" class="headerlink" title="对js原型链的一些看法，"></a>对js原型链的一些看法，</h3><p>和ruby相比呢js的原型链是较短的，也没有类类型的概念。js通过原型链实现了方法的共享(通过ConstructorA.prototype.__proto = SomeProtoType可以改变改变原型链)。如果没学过其它语言，js的原型链其实是很直观方便的，学过其它语言反而可能会生搬硬套，这是很有趣的一个地方，哈哈哈。<br>总之js是很神奇的动态语言，它是随着网页开发发展起来的。它现在一些看起来不合理的地方也是早期设计目标和现代web需求变化造成的。应该客观看待。</p>
+
       
     </div>
     
@@ -339,12 +327,6 @@
 
     <footer class="post-footer">
       
-        <div class="post-tags">
-          
-            <a href="/tags/js/" rel="tag"># js</a>
-          
-        </div>
-      
 
       
       
@@ -354,8 +336,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/06/20/js的历史/" rel="next" title="js的历史">
-                <i class="fa fa-chevron-left"></i> js的历史
+              <a href="/2018/06/20/js里的数据类型转换/" rel="next" title="js里的数据类型转换">
+                <i class="fa fa-chevron-left"></i> js里的数据类型转换
               </a>
             
           </div>
@@ -363,10 +345,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/06/20/js的原型和原型链/" rel="prev" title="js的原型和原型链">
-                js的原型和原型链 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -496,7 +474,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#任意类型转字符串"><span class="nav-number">1.</span> <span class="nav-text">任意类型转字符串</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#任意类型转数字"><span class="nav-number">2.</span> <span class="nav-text">任意类型转数字</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#任意类型转布尔"><span class="nav-number">3.</span> <span class="nav-text">任意类型转布尔</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#js的原型和原型链"><span class="nav-number">1.</span> <span class="nav-text">js的原型和原型链</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#对js原型链的一些看法，"><span class="nav-number">2.</span> <span class="nav-text">对js原型链的一些看法，</span></a></li></ol></div>
             
 
           </div>
@@ -689,7 +667,7 @@
       <script type="text/javascript">
       function renderGitment(){
         var gitment = new Gitmint({
-            id: 'js里的数据类型转换', 
+            id: 'js的原型和原型链', 
             owner: 'zhouchunyu',
             repo: 'git-comments',
             
