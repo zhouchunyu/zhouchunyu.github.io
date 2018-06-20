@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="开始系统的学习js啦js是门神奇的语言。它的历史和浏览器的发展紧紧的绑在一起。 js是1995年诞生的，已经诞生23年了。 js">
+<meta name="description" content="基本数据类型 数值（number）：整数和小数（比如1和3.14） 字符串（string）：文本（比如Hello World）。 布尔值（boolean）：表示真伪的两个特殊值，即true（真）和false（假） undefined：表示“未定义”或不存在，即由于目前没有定义，所以此处暂时没有任何值 null：表示空值，即此处的值为空。 对象（object）：各种值组成的集合。  数值、字符串、布">
 <meta name="keywords" content="js">
 <meta property="og:type" content="article">
 <meta property="og:title" content="js里的数据">
 <meta property="og:url" content="http://yoursite.com/2018/06/20/js里的数据/index.html">
 <meta property="og:site_name" content="后端学前端">
-<meta property="og:description" content="开始系统的学习js啦js是门神奇的语言。它的历史和浏览器的发展紧紧的绑在一起。 js是1995年诞生的，已经诞生23年了。 js">
+<meta property="og:description" content="基本数据类型 数值（number）：整数和小数（比如1和3.14） 字符串（string）：文本（比如Hello World）。 布尔值（boolean）：表示真伪的两个特殊值，即true（真）和false（假） undefined：表示“未定义”或不存在，即由于目前没有定义，所以此处暂时没有任何值 null：表示空值，即此处的值为空。 对象（object）：各种值组成的集合。  数值、字符串、布">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-06-20T02:25:06.000Z">
+<meta property="og:updated_time" content="2018-06-20T05:46:46.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="js里的数据">
-<meta name="twitter:description" content="开始系统的学习js啦js是门神奇的语言。它的历史和浏览器的发展紧紧的绑在一起。 js是1995年诞生的，已经诞生23年了。 js">
+<meta name="twitter:description" content="基本数据类型 数值（number）：整数和小数（比如1和3.14） 字符串（string）：文本（比如Hello World）。 布尔值（boolean）：表示真伪的两个特殊值，即true（真）和false（假） undefined：表示“未定义”或不存在，即由于目前没有定义，所以此处暂时没有任何值 null：表示空值，即此处的值为空。 对象（object）：各种值组成的集合。  数值、字符串、布">
 
 
 
@@ -310,9 +310,71 @@
       
 
       
-        <h3 id="开始系统的学习js啦"><a href="#开始系统的学习js啦" class="headerlink" title="开始系统的学习js啦"></a>开始系统的学习js啦</h3><p>js是门神奇的语言。它的历史和浏览器的发展紧紧的绑在一起。</p>
-<p>js是1995年诞生的，已经诞生23年了。</p>
-<h4 id="js"><a href="#js" class="headerlink" title="js"></a>js</h4>
+        <h3 id="基本数据类型"><a href="#基本数据类型" class="headerlink" title="基本数据类型"></a>基本数据类型</h3><ul>
+<li>数值（number）：整数和小数（比如1和3.14）</li>
+<li>字符串（string）：文本（比如Hello World）。</li>
+<li>布尔值（boolean）：表示真伪的两个特殊值，即true（真）和false（假）</li>
+<li>undefined：表示“未定义”或不存在，即由于目前没有定义，所以此处暂时没有任何值</li>
+<li>null：表示空值，即此处的值为空。</li>
+<li>对象（object）：各种值组成的集合。</li>
+</ul>
+<p>数值、字符串、布尔值三种类型，合称为原始类型<br>对象是最复杂的数据类型 可以分为三个子类型</p>
+<ul>
+<li>对象</li>
+<li>函数</li>
+<li>数组</li>
+</ul>
+<p>null和undefined是两个特殊值。null表示空对象，undefined表示未定义。</p>
+<h3 id="一些补充"><a href="#一些补充" class="headerlink" title="一些补充"></a>一些补充</h3><h4 id="number"><a href="#number" class="headerlink" title="number"></a>number</h4><ul>
+<li>整数和小数：1 1.1 .1</li>
+<li>科学记数法：1.23e2</li>
+<li>二进制：0b11</li>
+<li>八进制：011（后来 ES5 添加了 0o11 语法）</li>
+<li>十六进制：0x11</li>
+</ul>
+<h4 id="string"><a href="#string" class="headerlink" title="string"></a>string</h4><ul>
+<li>‘’ 和 “” 没有区别 <code></code>可以方便的使用内插，而且不用使用转义就可以输入控制字符</li>
+<li>在单行字符串尾部使用\可以换行输入字符串，可以避免在编辑器里单行字符串过长，影响显示。</li>
+</ul>
+<h4 id="object"><a href="#object" class="headerlink" title="object"></a>object</h4><ul>
+<li>object 就是上面几种基本类型（无序地）组合在一起</li>
+<li>object 的 key 一律是字符串，不存在其他类型的 key</li>
+<li>object[‘’] 是合法的</li>
+<li>object[‘key’] 可以写作 object.key</li>
+<li>delete object[‘key’]</li>
+<li>‘key’ in object</li>
+<li>for(key in object){}</li>
+</ul>
+<h4 id="typeof-操作符"><a href="#typeof-操作符" class="headerlink" title="typeof 操作符"></a>typeof 操作符</h4><table>
+<thead>
+<tr>
+<th>object的类型</th>
+<th>string</th>
+<th>number</th>
+<th>boolean</th>
+<th>symbol</th>
+<th>undefined</th>
+<th>null</th>
+<th>object</th>
+<th>function</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>typeof object的值</td>
+<td>‘string’</td>
+<td>‘number’</td>
+<td>‘boolean’</td>
+<td>‘symbol’</td>
+<td>‘undefined’</td>
+<td>‘object’</td>
+<td>‘object’</td>
+<td>‘function’</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+
       
     </div>
     
@@ -484,7 +546,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#开始系统的学习js啦"><span class="nav-number">1.</span> <span class="nav-text">开始系统的学习js啦</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#js"><span class="nav-number">1.1.</span> <span class="nav-text">js</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#基本数据类型"><span class="nav-number">1.</span> <span class="nav-text">基本数据类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#一些补充"><span class="nav-number">2.</span> <span class="nav-text">一些补充</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#number"><span class="nav-number">2.1.</span> <span class="nav-text">number</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#string"><span class="nav-number">2.2.</span> <span class="nav-text">string</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#object"><span class="nav-number">2.3.</span> <span class="nav-text">object</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#typeof-操作符"><span class="nav-number">2.4.</span> <span class="nav-text">typeof 操作符</span></a></li></ol></li></ol></div>
             
 
           </div>
