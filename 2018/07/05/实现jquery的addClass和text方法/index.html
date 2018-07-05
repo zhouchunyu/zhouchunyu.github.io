@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="css," />
+  <meta name="keywords" content="Hexo, NexT" />
 
 
 
@@ -79,18 +79,14 @@
 
 
 
-<meta name="description" content="前端三件套各自的作用:html组织页面的结构，css负责网页的样式，js负责页面的行为。 css样式的引入方式想要使用css改变网页的样式，首先得引入css，目前有四种引入css方式:  通过内联的style属性 通过style标签 link 标签css文件引入 在css文件中通过@import url引入  写一个顶部导航nav先123456789101112131415161718192021">
-<meta name="keywords" content="css">
 <meta property="og:type" content="article">
-<meta property="og:title" content="css_style_引入">
-<meta property="og:url" content="http://yoursite.com/2018/04/08/css-style-引入/index.html">
+<meta property="og:title" content="实现jquery的addClass和text方法">
+<meta property="og:url" content="http://yoursite.com/2018/07/05/实现jquery的addClass和text方法/index.html">
 <meta property="og:site_name" content="后端学前端">
-<meta property="og:description" content="前端三件套各自的作用:html组织页面的结构，css负责网页的样式，js负责页面的行为。 css样式的引入方式想要使用css改变网页的样式，首先得引入css，目前有四种引入css方式:  通过内联的style属性 通过style标签 link 标签css文件引入 在css文件中通过@import url引入  写一个顶部导航nav先123456789101112131415161718192021">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-04-26T12:18:47.000Z">
+<meta property="og:updated_time" content="2018-07-05T02:59:09.634Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="css_style_引入">
-<meta name="twitter:description" content="前端三件套各自的作用:html组织页面的结构，css负责网页的样式，js负责页面的行为。 css样式的引入方式想要使用css改变网页的样式，首先得引入css，目前有四种引入css方式:  通过内联的style属性 通过style标签 link 标签css文件引入 在css文件中通过@import url引入  写一个顶部导航nav先123456789101112131415161718192021">
+<meta name="twitter:title" content="实现jquery的addClass和text方法">
 
 
 
@@ -120,13 +116,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/04/08/css-style-引入/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/07/05/实现jquery的addClass和text方法/"/>
 
 
 
 
 
-  <title>css_style_引入 | 后端学前端</title>
+  <title>实现jquery的addClass和text方法 | 后端学前端</title>
   
 
 
@@ -233,7 +229,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/08/css-style-引入/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/07/05/实现jquery的addClass和text方法/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="zcy4coding">
@@ -250,7 +246,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">css_style_引入</h1>
+          <h1 class="post-title" itemprop="name headline">实现jquery的addClass和text方法</h1>
         
 
         <div class="post-meta">
@@ -262,8 +258,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-04-08T17:25:41+08:00">
-                2018-04-08
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-07-05T10:59:09+08:00">
+                2018-07-05
               </time>
             
 
@@ -281,8 +277,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/04/08/css-style-引入/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count gitment-comments-count" data-xid="/2018/04/08/css-style-引入/" itemprop="commentsCount"></span>
+                <a href="/2018/07/05/实现jquery的addClass和text方法/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count gitment-comments-count" data-xid="/2018/07/05/实现jquery的addClass和text方法/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -310,17 +306,7 @@
       
 
       
-        <p>前端三件套各自的作用:html组织页面的结构，css负责网页的样式，js负责页面的行为。</p>
-<h2 id="css样式的引入方式"><a href="#css样式的引入方式" class="headerlink" title="css样式的引入方式"></a>css样式的引入方式</h2><p>想要使用css改变网页的样式，首先得引入css，目前有四种引入css方式:</p>
-<ul>
-<li>通过内联的style属性</li>
-<li>通过style标签</li>
-<li>link 标签css文件引入</li>
-<li>在css文件中通过@import url引入</li>
-</ul>
-<h2 id="写一个顶部导航nav先"><a href="#写一个顶部导航nav先" class="headerlink" title="写一个顶部导航nav先"></a>写一个顶部导航nav先</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line">a.css</span><br><span class="line"></span><br><span class="line">.clearfix::after&#123;</span><br><span class="line">    content: &apos;&apos;;</span><br><span class="line">    display: block;</span><br><span class="line">    clear: both;</span><br><span class="line">&#125;</span><br><span class="line">.topNavBar&gt;nav&gt;ul&#123;</span><br><span class="line">    list-style: none;</span><br><span class="line">    margin: 0;</span><br><span class="line">    padding: 0;</span><br><span class="line">    border: 1px solid red;</span><br><span class="line">&#125;</span><br><span class="line">.topNavBar&gt;nav&gt;ul&gt;li&#123;</span><br><span class="line">   float: left;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">index.html</span><br><span class="line"></span><br><span class="line">&lt;div class=&quot;topNavBar&quot;&gt;</span><br><span class="line">    &lt;a href=&quot;#&quot; class=&quot;logo&quot; alt=&quot;logo&quot;&gt;</span><br><span class="line">        &lt;span class=&apos;rs&apos;&gt;rs&lt;/span&gt;</span><br><span class="line">        &lt;span class=&apos;card&apos;&gt;card&lt;/span&gt;</span><br><span class="line">    &lt;/a&gt;</span><br><span class="line">    &lt;nav&gt;</span><br><span class="line">        &lt;ul style=&quot;list-style: none&quot; class=&apos;clearfix&apos;&gt;</span><br><span class="line">            &lt;li &gt;&lt;a href=&quot;#&quot;&gt;关于&lt;/a&gt;&lt;/li&gt;</span><br><span class="line">            &lt;li &gt;&lt;a href=&quot;#&quot;&gt;技能&lt;/a&gt;&lt;/li&gt;</span><br><span class="line">            &lt;li &gt;&lt;a href=&quot;#&quot;&gt;作品&lt;/a&gt;&lt;/li&gt;</span><br><span class="line">            &lt;li &gt;&lt;a href=&quot;#&quot;&gt;博客&lt;/a&gt;&lt;/li&gt;</span><br><span class="line">            &lt;li &gt;&lt;a href=&quot;#&quot;&gt;日历&lt;/a&gt;&lt;/li&gt;</span><br><span class="line">            &lt;li &gt;&lt;a href=&quot;#&quot;&gt;联系方式&lt;/a&gt;&lt;/li&gt;</span><br><span class="line">            &lt;li &gt;&lt;a href=&quot;#&quot;&gt;其他&lt;/a&gt;&lt;/li&gt;</span><br><span class="line">        &lt;/ul&gt;</span><br><span class="line">    &lt;/nav&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
-<p>这个导航条条里 li 元素用了浮动布局，不过浮动元素经常有奇怪的bug，给浮动元素的父元素加一个clearfix类。clearfix类的样式只有三行，这三行样式可以解决很多bug。</p>
-
+        
       
     </div>
     
@@ -335,12 +321,6 @@
 
     <footer class="post-footer">
       
-        <div class="post-tags">
-          
-            <a href="/tags/css/" rel="tag"># css</a>
-          
-        </div>
-      
 
       
       
@@ -350,8 +330,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/04/04/造轮子-ui组件/" rel="next" title="造轮子_ui组件">
-                <i class="fa fa-chevron-left"></i> 造轮子_ui组件
+              <a href="/2018/06/20/js的原型和原型链/" rel="next" title="js的原型和原型链">
+                <i class="fa fa-chevron-left"></i> js的原型和原型链
               </a>
             
           </div>
@@ -359,10 +339,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/04/15/css-布局和定位/" rel="prev" title="css_布局和定位">
-                css_布局和定位 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -421,17 +397,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            Table of Contents
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            Overview
-          </li>
-        </ul>
-      
 
-      <section class="site-overview-wrap sidebar-panel">
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -482,22 +449,6 @@
         </div>
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#css样式的引入方式"><span class="nav-number">1.</span> <span class="nav-text">css样式的引入方式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#写一个顶部导航nav先"><span class="nav-number">2.</span> <span class="nav-text">写一个顶部导航nav先</span></a></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
       
@@ -685,7 +636,7 @@
       <script type="text/javascript">
       function renderGitment(){
         var gitment = new Gitmint({
-            id: 'css_style_引入', 
+            id: '实现jquery的addClass和text方法', 
             owner: 'zhouchunyu',
             repo: 'git-comments',
             
